@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function f(x, y){
+            var z;
+            z=x+y;
+            return z;
+        }
+        document.write(f(3, 6));
+        document.write('<br>');
+
+        var txt = 'cool LEADER chohyeryung';    //23
+        var num = 10;
+        document.write(txt.length);
+        document.write('<br>');
+        document.write(txt.indexOf('LEADER'));  //5, leader의 시작 인덱스
+        document.write('<br>');
+        document.write(txt.slice(0, 7));    //cool le
+        document.write('<br>');
+        document.write(txt.replace('cool', 'awesome')); //awesome leader chohyeryung
+        document.write('<br>');
+        document.write(txt.toUpperCase());    //COOL LEADER CHOHYERYUNG
+        document.write('<br>');
+
+        document.write(num.toFixed(6));    //10.000000 소수점 이하를 6자리로
+        document.write('<br>');
+        document.write(num.toString());    //'10'
+        document.write('<br>');
+
+        document.write(Math.PI);    //3.14~~~
+        document.write('<br>');
+        document.write(Math.max(10, 20, 30));    //'30
+        document.write('<br>');
+        document.write(Math.random());    //0~1까지 중 랜덤한 숫자
+        document.write('<br>');
+        document.write(Math.random()*10);    //0~10까지 중 랜덤한 숫자
+        document.write('<br>');
+        document.write((Math.random()*10)+1);    //1~10까지 중 랜덤한 숫자
+        document.write('<br>');
+    </script>
+</body>
+</html>
