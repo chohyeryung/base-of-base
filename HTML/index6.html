@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, tr, td {
+            border: 1px solid black;
+            /* 중복 border 제거 -> 하나로 */
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        1. thead: th group을 묶는 역할(ex. div)
+        2. table은 구도를 잡는 용도로 사용하지 않는다.
+     -->
+    <table>
+        <tr>
+            <th>구분</th>
+            <th>이름</th>
+            <th>판매량</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>해리포터</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>헝거게임</td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>반지의제왕</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <!-- colspan: 가로로 2개 합침 / rowspan: 세로로 합침 -->
+            <td colspan="2">총 판매량</td>
+            <td>600</td>
+        </tr>
+    </table>
+</body>
+</html>
