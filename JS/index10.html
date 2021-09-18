@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var, let, const
+        var i = 10;
+        const k = 10000;
+        if (i>5) {
+            const j = 100;
+        } else {
+            const j = 1000;
+        }
+        document.write(j);  //j가 let이면 j선언 스코프와 출력 스코프가 다르기 때문에 아무것도 출력 안됨
+        document.write(k);
+
+        function f() {
+            var fvar = 100000;
+        }
+        f();
+        document.write(fvar);
+    </script>
+</body>
+</html>

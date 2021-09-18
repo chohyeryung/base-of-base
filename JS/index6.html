@@ -8,8 +8,30 @@
 </head>
 <body>
     <script>
-        var l = [10, 20, 30, 40];
+        // 배열
+        var l = [10, 20, 30, 40, 50];
+        document.write(l[0]);   // 10
+        document.write('<br>');
+        document.write(l[1]);   // 20
+        document.write('<br>');
         document.write(l[2]);   // 30
+        document.write('<br>');
+        document.write(l.slice(0, 3));   // 10, 20, 30 / 0 ~ 2번째까지
+        document.write('<br>');
+        document.write(l.slice(1, 4));   // 20, 30, 40
+        document.write('<br>');
+        document.write(l.pop());   // 50
+        document.write('<br>');
+        document.write(l);   // 10, 20, 30, 40
+        document.write('<br>');
+        l.push(1000);
+        document.write(l);   // 10, 20, 30, 40, 1000
+        document.write('<br>');
+        document.write(l.join('!!'));   // 10!!20!!30!!40!!1000
+        document.write('<br>');
+        l.sort();
+        document.write(l);   // 10, 1000, 20, 30 (사전순으로.)
+        document.write('<br>');
     </script>
 </body>
 </html>

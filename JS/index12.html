@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1 id="one">hello world</h1> -->
+    <h1 class="one">hello world one</h1>
+    <h1 class="one two">hello world two</h1>
+    <h1 class="one two three" id="four">hello world three</h1>
+    <h1>hello world four</h1>
+    <h1>hello world five</h1>
+    <h1>hello world six</h1>
+    <p>hello world</p>
+    <button id="two" onclick="f()">눌러</button>
+    <!--
+        jQuery는
+        1. element를 선택할 수 있는 강력한 방법
+        2. 선택된 엘리먼트를 효율적으로 제어할 수 있는 방법
+     -->
+     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        // function f() {
+        //     $("#one").html('반갑습니다!!!!!');
+        //     // document.getElementById("one").innerHTML = '반갑습니다!!';
+        //     document.getElementById("one").style.backgroundColor = '#fff000';
+        // }
+        $("#two").click (
+            function f() {
+                $('h1:first').html('반갑습니다!!!!first').fadeOut(3000).fadeIn(3000).fadeOut(3000).fadeIn(3000);
+                $('h1:last').html('반갑습니다!!!!last');
+                // $('h1:odd').html('반갑습니다!!!!홀쑤'); // 0, 1, 2, 3, 4, 5
+            }
+        );
+
+        // 필터
+        // :even, :odd, :first, :last, :nth-child(2), :nth-child(2n)
+
+        // 메서드
+        // .text, .html, .val, .hide, .show, .fadeIn, .fadeOut
+    </script>
+</body>
+</html>
