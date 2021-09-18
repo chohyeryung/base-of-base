@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            width: 300px;
+            border: 1px solid black;
+            padding: 10px;
+            margin: 20px;
+            /* border를 기준으로 크기. padding이 있어도 width에 영향을 주지 않는다. 만약 box-sizing이 없다면 최종 h1의 width는 약 320px이 된다. */
+            box-sizing: border-box;
+        }
+        @keyframes 애니 {
+            50% {
+                transform: translate(200px, 0);
+            }
+            100% {
+                transform: translate(200px, 200px);
+            }
+        }
+        div {
+            background-color: darkgreen;
+            width: 100px;
+            height: 100px;
+            /* 2s: 2초동안 실행 / 50%가 1s, 100%가 2s */
+            animation: 애니 2s;
+            /* hover 애니메이션 1s의 텀을 주고 애니메이션 주겠다. */
+            transition: all 1s;
+        }
+        div:hover {
+            background-color: dodgerblue;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>hello world</h1>
+    <div>div hello world</div>
+</body>
+</html>

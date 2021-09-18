@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            px
+            1980x1020 -> 가로 1980개의 px / 세로 1020개의 px
+        */
+        body {
+            font-size: 10px;
+        }
+        .one {
+            font-size: 32px;
+        }
+        .two {
+            /* 상위요소의 2배로 / 상위요소가 없다면 기본 16px의 배수로 적용 */
+            font-size: 2em;
+        }
+        .three {
+            /* html 문서 최상위 요소의 2배로 */
+            font-size: 2rem;
+        }
+        .four {
+            /* 화면의 50% x, 부모의 50% */
+            width: 50%;
+            height: 100px;
+            background-color: red;
+        }
+        .five {
+            /* 
+                vw는 부모가 누구든지 화면 기준으로 움직임. 
+                1vw = 화면의 1/100 (width)
+                1vh = 화면의 1/100 (height)
+            */
+            width: 50vw;
+            height: 100px;
+            background-color: aqua;
+        }
+        .six {
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h1>hello world</h1>
+    <div class="one">hello world</div>
+    <div class="two">
+        <div class="two">
+            <!-- 80px이 된다. two1: 20px, two2: 40px, two3: 80px -->
+            <div class="two">hello world</div>
+        </div>
+    </div>
+    <br><br>
+    <div class="two">
+        <div class="two">
+            <div class="three">hello world</div>
+        </div>
+    </div>
+    <div class="six">
+        <!-- six의 50% 넓이 -->
+        <div class="four"></div>
+    </div>
+    <div class="four"></div>
+    <div class="six">
+        <div class="five"></div>
+    </div>
+</body>
+</html>

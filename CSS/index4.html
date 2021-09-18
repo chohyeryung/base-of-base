@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+            border: 4px solid palevioletred;
+            border-radius: 4px;
+            padding: 30px 60px;
+            background: none;
+            color: palevioletred;
+            font-size: 32px;
+            position: relative;
+            /* 글자가 흘러넘치면 넘친건 잘라냄 */
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            color: white;
+            border: 4px solid firebrick;
+        }
+        /* 앞에 붙는 before */
+        .btn:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: palevioletred;
+            z-index: -1;
+            /* 위 왼, 위 오만 100px */
+            border-radius: 100px 100px 0px 0px;
+            height: 0;
+            transition: all 0.3s;
+        }
+        .btn:hover:before {
+            height: 120px;
+            background-color: firebrick;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">Click Me !!</button>
+</body>
+</html>
