@@ -34,6 +34,7 @@ function addList() {
     var checkIcon = document.createElement('i');
     checkIcon.setAttribute('class', 'far fa-check-square');
     checkBtn.appendChild(checkIcon);
+    checkBtn.addEventListener('click', checkList);
     todo.appendChild(checkBtn);
 
     var span = document.createElement('span');
@@ -59,6 +60,25 @@ function addList() {
     todo.appendChild(div);
     resultList.appendChild(todo);
     cnt++;
+}
+
+function checkList(event) {
+    const li = event.target.offsetParent;
+    if (li.children[3]) {
+        li.children[3].remove();
+    } else {
+         var line = document.createElement('div');
+        line.setAttribute('class', 'line');
+        line.style.position = "absolute";
+        line.style.top = "50%";
+        line.style.left = "0px";
+        line.style.margin = '0px';
+        line.style.width = '100%';
+        line.style.height = '1px';
+        line.style.zIndex = '-1';
+        line.style.backgroundColor = 'black';
+        li.appendChild(line);
+    }
 }
 
 function updateList(event) {
