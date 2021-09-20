@@ -1,5 +1,6 @@
 var today = document.getElementById("today");
 var day = document.getElementById("day");
+var remainCnt = document.getElementById("remain_todo");
 var todoInput = document.getElementById("input_todo");
 var startBtn = document.getElementById("start_btn");
 var resultList = document.getElementById("result_list");
@@ -17,7 +18,7 @@ switch(date.getDay()) {
     case 6 : day.innerText = '토요일'; break;
 }
 
-//     $('#remain_todo').html(`${resultList.children().not('.checked').length}개`);
+remainCnt.innerText = `${document.querySelectorAll("li:not(.checked)").length}개`;
 
 function addList() {
     var todo = document.createElement('li');
@@ -60,14 +61,18 @@ function addList() {
     todo.appendChild(div);
     resultList.appendChild(todo);
     cnt++;
+    remainCnt.innerText = `${document.querySelectorAll("li:not(.checked)").length}개`;
 }
 
 function checkList(event) {
     const li = event.target.offsetParent;
     if (li.children[3]) {
+        li.className = 'todo';
         li.children[3].remove();
+        remainCnt.innerText = `${document.querySelectorAll("li:not(.checked)").length}개`;
     } else {
-         var line = document.createElement('div');
+        li.className += ' checked';
+        var line = document.createElement('div');
         line.setAttribute('class', 'line');
         line.style.position = "absolute";
         line.style.top = "50%";
@@ -78,6 +83,7 @@ function checkList(event) {
         line.style.zIndex = '-1';
         line.style.backgroundColor = 'black';
         li.appendChild(line);
+        remainCnt.innerText = `${document.querySelectorAll("li:not(.checked)").length}개`;
     }
 }
 
@@ -93,8 +99,7 @@ function updateList(event) {
 function deleteList(event) {
     const li = event.target.offsetParent;
     li.remove();
-    // $('#remain_todo').html(`${resultList.children().not('.checked').length}개`);
-    // $(this).parents('.todo').remove();
+    remainCnt.innerText = `${document.querySelectorAll("li:not(.checked)").length}개`;
 }
 //         $('#remain_todo').html(`${resultList.children().not('.checked').length}개`);
 
