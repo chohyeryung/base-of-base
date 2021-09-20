@@ -14,4 +14,12 @@
 .todo {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.delete_btn, .check_btn {
+    background: none;
+    cursor: pointer;
+    border: none;
 }
