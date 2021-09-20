@@ -2,25 +2,31 @@ $(function () {
     var todoInput = $("#input_todo");
     var startBtn = $("#start_btn");
     var resultList = $("#result_list");
-    var deleteBtn = $(".delete_btn");
     var i = 1;
 
     function addList() {
         var todoValue = todoInput.val();
+        if (!todoValue) {
+            alert('투두를 입력해주세요.')
+            return 0;
+        }
         resultList.append(`<li class="todo" id="id_${i}">
-                            <button class="check_btn"><i class="far fa-check-square"></i></button
+                            <button class="check_btn"><i class="far fa-check-square"></i></button>
                             <span>${todoValue}</span>
-                            <button class="delete_btn"><i class="fas fa-trash"></i></button>
+                            <div>
+                                <button class="update_btn"><i class="fas fa-pencil-alt"></i></button>
+                                <button class="delete_btn"><i class="fas fa-trash"></i></button>
+                            </div>
                         </li>`);
         i += 1;
 
         $('.delete_btn').on('click', function() {
-            $(this).parent().remove();
+            $(this).parents('.todo').remove();
         })
 
         $('.check_btn').on('click', function() {
-            if ($(this).parent().children().length == 3) {
-                $(this).parent().children('.line').remove();
+            if ($(this).parents('.todo').children().length == 4) {
+                $(this).parents('.todo').children('.line').remove();
             } else {
                 var line = document.createElement('div');
                 line.setAttribute('class', 'line');
@@ -35,6 +41,13 @@ $(function () {
                 $(`#id_${i-1}`).append(line);
             }
             
+        })
+
+        $('.update_btn').on('click', function() {
+            var updateTodo = prompt('투투 값을 변경해주세요', `${$(this).parents('.todo').children('span').text()}`);
+            if (updateTodo) {
+                $(this).parents('.todo').children('span').html(updateTodo);
+            } 
         })
     }
 
