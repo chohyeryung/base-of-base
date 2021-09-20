@@ -1,25 +1,81 @@
 #contents {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    box-shadow: 0px 4px 15px rgb(221, 221, 221);
+    border-radius: 30px;
+    margin: 0 auto;
+    width: 500px;
+    height: 600px;
+    padding: 40px;
+    position: relative;
+    z-index: -1;
+    margin-top: 50px;
+}
+
+.title {
+    position: absolute;
+    top: -7.5%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+    font-size: 40px;
+    color: #59D99D;
 }
 
 #result_list {
     list-style: none;
     padding: 0;
     width: 300px;
-    margin-top: 50px;
 }
 
 .todo {
     display: flex;
-    justify-content: space-around; 
+    justify-content: space-between; 
     margin-bottom: 20px;
     position: relative;
+    font-weight: 900;
+    font-size: 23px;
 }
 
-.delete_btn, .check_btn, .update_btn {
+.delete_btn, .check_btn, .update_btn, #start_btn {
     background: none;
     cursor: pointer;
     border: none;
+}
+
+#start_btn {
+    background-color:#59D99D;
+    border-radius: 50%;
+    padding: 10px 12px;
+}
+
+#input_todo {
+    border: none;
+    border-bottom: 1px solid #59D99D;
+    margin-right: 20px;
+    font-size: 23px;
+}
+
+#today, #day {
+    margin: 5px;
+}
+
+#day {
+    color: gray;
+}
+
+#remain_todo {
+    color: #59D99D;
+}
+
+hr {
+    width: 80%;
+    color:rgb(221, 221, 221);
+    margin: 0;
+    margin-bottom: 50px;
+}
+
+.fa-plus {
+    color: #fff;
 }

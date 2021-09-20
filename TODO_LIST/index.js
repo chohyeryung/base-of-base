@@ -18,7 +18,7 @@ switch(date.getDay()) {
     case 6 : day.innerText = '토요일'; break;
 }
 
-remainCnt.innerText = `${document.querySelectorAll("li:not(.checked)").length}개`;
+remainCnt.innerText = `할 일 ${document.querySelectorAll("li:not(.checked)").length}개 남음`;
 
 function addList() {
     var todo = document.createElement('li');
@@ -33,7 +33,7 @@ function addList() {
     var checkBtn = document.createElement('button');
     checkBtn.setAttribute('class', 'check_btn');
     var checkIcon = document.createElement('i');
-    checkIcon.setAttribute('class', 'far fa-check-square');
+    checkIcon.setAttribute('class', 'far fa-check-square fa-2x');
     checkBtn.appendChild(checkIcon);
     checkBtn.addEventListener('click', checkList);
     todo.appendChild(checkBtn);
@@ -46,7 +46,7 @@ function addList() {
     var updateBtn = document.createElement('button');
     updateBtn.setAttribute('class', 'update_btn');
     var updateIcon = document.createElement('i');
-    updateIcon.setAttribute('class', 'fas fa-pencil-alt');
+    updateIcon.setAttribute('class', 'fas fa-pencil-alt fa-2x');
     updateBtn.appendChild(updateIcon);
     updateBtn.addEventListener('click', updateList);
     div.appendChild(updateBtn);
@@ -54,14 +54,14 @@ function addList() {
     var deleteBtn = document.createElement('button');
     deleteBtn.setAttribute('class', 'delete_btn');
     var deleteIcon = document.createElement('i');
-    deleteIcon.setAttribute('class', 'fas fa-trash');
+    deleteIcon.setAttribute('class', 'fas fa-trash fa-2x');
     deleteBtn.appendChild(deleteIcon);
     deleteBtn.addEventListener('click', deleteList);
     div.appendChild(deleteBtn);
     todo.appendChild(div);
     resultList.appendChild(todo);
     cnt++;
-    remainCnt.innerText = `${document.querySelectorAll("li:not(.checked)").length}개`;
+    remainCnt.innerText = `할 일 ${document.querySelectorAll("li:not(.checked)").length}개 남음`;
 }
 
 function checkList(event) {
@@ -69,7 +69,7 @@ function checkList(event) {
     if (li.children[3]) {
         li.className = 'todo';
         li.children[3].remove();
-        remainCnt.innerText = `${document.querySelectorAll("li:not(.checked)").length}개`;
+        remainCnt.innerText = `할 일 ${document.querySelectorAll("li:not(.checked)").length}개 남음`;
     } else {
         li.className += ' checked';
         var line = document.createElement('div');
@@ -83,7 +83,7 @@ function checkList(event) {
         line.style.zIndex = '-1';
         line.style.backgroundColor = 'black';
         li.appendChild(line);
-        remainCnt.innerText = `${document.querySelectorAll("li:not(.checked)").length}개`;
+        remainCnt.innerText = `할 일 ${document.querySelectorAll("li:not(.checked)").length}개 남음`;
     }
 }
 
@@ -99,49 +99,7 @@ function updateList(event) {
 function deleteList(event) {
     const li = event.target.offsetParent;
     li.remove();
-    remainCnt.innerText = `${document.querySelectorAll("li:not(.checked)").length}개`;
+    remainCnt.innerText = `할 일 ${document.querySelectorAll("li:not(.checked)").length}개 남음`;
 }
-//         $('#remain_todo').html(`${resultList.children().not('.checked').length}개`);
-
-//         $('.delete_btn').on('click', function() {
-//             $('#remain_todo').html(`${resultList.children().not('.checked').length}개`);
-//             $(this).parents('.todo').remove();
-//         })
-
-//         $('.check_btn').on('click', function() {
-//             var todo = $(this).parents('.todo').attr('id');
-//             console.log(todo);
-//             if ($(`#${todo}`).children().length == 4) {
-//                 $(`#${todo}`).children('.line').remove();
-//                 // $(this).parents('.todo').removeClass('checked');
-//                 // $('#remain_todo').html(`${resultList.children().not('.checked').length}개`);
-//             } else {
-//                 // $('#remain_todo').html(`${resultList.children().not('.checked').length}개`);
-//                 var line = document.createElement('div');
-//                 line.setAttribute('class', 'line');
-//                 line.style.position = "absolute";
-//                 line.style.top = "50%";
-//                 line.style.left = "0px";
-//                 line.style.margin = '0px';
-//                 line.style.width = '100%';
-//                 line.style.height = '1px';
-//                 line.style.zIndex = '-1';
-//                 line.style.backgroundColor = 'black';
-//                 $(`#${todo}`).append(line);
-//                 // $(this).parents('.todo').addClass('checked');
-//             }
-            
-//         })
-
-//         $('.update_btn').on('click', function() {
-//             var updateTodo = prompt('투투 값을 변경해주세요', `${$(this).parents('.todo').children('span').text()}`);
-//             if (updateTodo) {
-//                 $(this).parents('.todo').children('span').html(updateTodo);
-//             } 
-//         })
-//     }
-
-//     startBtn.on('click', addList);
-// })
 
 startBtn.addEventListener('click', addList);
