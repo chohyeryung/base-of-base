@@ -1,0 +1,5 @@
+<div style="border: 1px solid green; width: 400px; margin: 20px;">
+  <h4>댓글 by <%= comment.author_name %></h4>
+  <p class="comment"><%= comment.body %></p>
+  <p><%= distance_of_time_in_words(comment.article.created_at, comment.created_at) %> 후 작성</p>
+</div>
