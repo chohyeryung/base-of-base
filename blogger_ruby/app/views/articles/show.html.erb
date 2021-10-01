@@ -10,3 +10,11 @@
   <%= render partial: 'articles/comment', collection: @article.comments.reverse %>
 </p>
 <%= render partial: 'comments/form' %>
+
+
+<p>
+  태그 : 
+  <% @article.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
